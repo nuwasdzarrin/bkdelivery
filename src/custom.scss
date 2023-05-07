@@ -1,1 +1,148 @@
+$font-family-base: "FlameReguler";
+$title-color: #8b542f;
+$background-gold: #ed7801;
+
 @import '~bootstrap/scss/bootstrap.scss';
+.mr-2 {
+  margin-right: 2px;
+}
+.mr-5 {
+  margin-right: 5px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-12 {
+  margin-right: 12px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.navbar-brand {
+  position: relative;
+  width: 90px;
+}
+.navbar {
+  &-logo {
+    position: absolute;
+    top: -20px;
+    width: 90px;
+    height: 90px;
+    z-index: 1;
+  }
+  .nav-link {
+    line-height: 20px;
+    color: $white;
+  }
+  .subtitle {
+    color: #faaf18;
+  }
+  .title {
+    font-family: FlameBold;
+    font-size: 25px;
+  }
+  .wrapper-ic-cart {
+    position: relative;
+    background-color: $background-gold;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -26px;
+    margin-bottom: -26px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    .total-cart {
+      background-color: red;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      right: 5px;
+    }
+  }
+}
+.footer {
+  padding: 20px 0;
+  a {
+    color: white;
+    text-decoration: unset;
+  }
+  .title {
+    font-size: 20px;
+    font-family: FlameBold;
+    @media screen and (max-width: 1025px) {
+      text-align: center;
+    }
+  }
+  .second {
+    display: flex;
+    font-family: FlameBold;
+    @media screen and (max-width: 1025px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .phone {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .third {
+    display: flex;
+    @media screen and (max-width: 1025px) {
+      display: block;
+      text-align: center;
+    }
+    @media screen and (min-width: 1026px) {
+      .right-line {
+        border-right: 1px solid white;
+        padding-right: 12px
+      }
+    }
+  }
+}
+.section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .title {
+    font-family: FlameBold;
+    font-size: 30px;
+    text-align: center;
+    color: $title-color;
+  }
+  .wrapper-menu {
+    background-color: white;
+    box-shadow: 2px 2px 15px -4px #6b6b6b;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .image-menu {
+      width: 100%;
+    }
+    .product-title {
+      font-family: FlameBold;
+      font-size: 21px;
+      color: $title-color;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .btn-order {
+      color: white;
+      background-color: $background-gold;
+      font-weight: bold;
+      width: 100%;
+    }
+  }
+}

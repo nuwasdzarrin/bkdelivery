@@ -9,11 +9,16 @@ import TheHeader from "./components/TheHeader";
 import Home from "./pages/Home";
 import TheFooter from "./components/TheFooter";
 import Detail from "./pages/Detail";
+import Menu from "./pages/menus";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/menus/:menu",
+    element: <Menu />,
   },
   {
     path: "/detail",

@@ -1,8 +1,13 @@
+import logoBK from '../assets/images/logo_bk.png'
+import iconCart from '../assets/icons/ic_cart.png'
+
 const TheHeader = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container">
+                <a className="navbar-brand" href="/">
+                    <img src={logoBK} className="navbar-logo" />
+                </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -11,26 +16,31 @@ const TheHeader = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                Dropdown
+                            <a className="nav-link" aria-current="page" href="#">
+                                <div className="subtitle">Delivery</div>
+                                <div className="title">Order</div>
                             </a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled">Disabled</a>
+                            <a className="nav-link" aria-current="page" href="#">
+                                <div className="subtitle">Get Fresh</div>
+                                <div className="title">Promotions</div>
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" aria-current="page" href="#">
+                                <div className="subtitle">Exclusive</div>
+                                <div className="title">Large Order</div>
+                            </a>
                         </li>
                     </ul>
+                </div>
+                <div className="d-flex nav-link">
+                    <div className="title mr-15">LOGIN</div>
+                    <div className="wrapper-ic-cart">
+                        <img src={iconCart} />
+                        <div className="total-cart">0</div>
+                    </div>
                 </div>
             </div>
         </nav>
