@@ -1,3 +1,6 @@
+$menu-gold: #8b542f;
+$menu-yellow: #faaf18;
+
 .step-wrapper {
   margin: 0 0 20px;
   display: table;
@@ -17,8 +20,11 @@
       border-radius: 5px 0 0 5px;
     }
     &.active {
-      background-color: #faaf18;
-      color: #8b542f;
+      background-color: $menu-yellow;
+      color: $menu-gold;
+      & span {
+        background-color: $menu-gold;
+      }
       &:before {
         content: '';
         width: 32px;
@@ -27,17 +33,17 @@
         right: -16px;
         top: 6px;
         transform: rotate(45deg);
-        background: #faaf18;
+        background: $menu-yellow;
         border-radius: 2px 5px 2px 0;
         z-index: 2;
       }
     }
     & span {
-      font-size: 12px;
+      font-size: 13px;
       border-radius: 50%;
-      display: inline-block;
       color: white;
       background-color: #c5a997;
+      padding: 5px 8px;
       margin-right: 5px;
     }
   }

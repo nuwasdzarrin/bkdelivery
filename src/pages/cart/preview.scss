@@ -1,0 +1,15 @@
+.table-cart {
+  & tr {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  & th {
+    padding-bottom: 8px;
+    min-width: 100px;
+  }
+  & td {
+    padding: 15px 0;
+    .description {
+      max-width: 90%;
+    }
+  }
+}

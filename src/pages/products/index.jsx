@@ -32,7 +32,7 @@ const Product = () => {
                                         <div className="py-3">
                                             <div className="price mb-2">Rp. 25,000</div>
                                             <div className="add-on mb-2">ADD ON -</div>
-                                            <div className="quantity mb-3">
+                                            <div className="form-input-qty mb-3">
                                                 <div className="control">-</div>
                                                 <div className="qty">0</div>
                                                 <div className="control">+</div>

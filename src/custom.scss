@@ -21,6 +21,9 @@ $background-gold: #ed7801;
 .mr-20 {
   margin-right: 20px;
 }
+.text-right {
+  text-align: right;
+}
 .border-left {
   border-left: 1px solid #e0e0e0;
 }
@@ -177,5 +180,37 @@ $background-gold: #ed7801;
       font-weight: bold;
       width: 100%;
     }
+  }
+}
+.right-product {
+  border-left: 1px solid #e0e0e0;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .add-on {
+    font-size: 13px;
+    color: $title-color;
+  }
+}
+.form-input-qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-weight: bold;
+  .control {
+    font-size: 22px;
+    color: #faaf18;
+    cursor: pointer;
+  }
+  .qty {
+    font-size: 20px;
   }
 }
