@@ -24,7 +24,7 @@ const Home = () => {
                                             <img src={mn.image} className="image-menu" />
                                             <div className="row mt-3">
                                                 <div className="col-lg-6">
-                                                    <div className="product-title">{mn.title}</div>
+                                                    <div className="menu-title">{mn.title}</div>
                                                 </div>
                                                 <div className="d-none d-lg-block col-lg-6 right">
                                                     <button className="btn btn-warning btn-block btn-order">Order</button>

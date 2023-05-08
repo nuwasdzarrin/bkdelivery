@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import TheFooter from "./components/TheFooter";
 import Detail from "./pages/Detail";
 import Menu from "./pages/menus";
+import Product from "./pages/products";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/menus/:menu",
     element: <Menu />,
+  },
+  {
+    path: "/products/:menu/:product",
+    element: <Product />,
   },
   {
     path: "/detail",

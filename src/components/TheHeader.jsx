@@ -5,7 +5,7 @@ const TheHeader = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <a className="navbar-brand" href="/">
+                <a className="navbar-brand d-none d-lg-block" href="/">
                     <img src={logoBK} className="navbar-logo" />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,6 +35,9 @@ const TheHeader = () => {
                         </li>
                     </ul>
                 </div>
+                <a className="d-lg-none" href="/">
+                    <img src={logoBK} className="navbar-logo" />
+                </a>
                 <div className="d-flex nav-link">
                     <div className="title mr-15">LOGIN</div>
                     <div className="wrapper-ic-cart">
