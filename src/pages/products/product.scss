@@ -16,5 +16,18 @@ $gold-add: #8b542f;
   .quantity {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 2px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-weight: bold;
+    .control {
+      font-size: 22px;
+      color: #faaf18;
+      cursor: pointer;
+    }
+    .qty {
+      font-size: 20px;
+    }
   }
 }

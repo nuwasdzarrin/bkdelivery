@@ -1,14 +1,13 @@
 import './product.scss'
 import {useParams} from "react-router-dom";
 import {menuMasterData} from "../../data";
-import {convertStringToSlug, formatPrice} from "../../helpers";
+import {convertStringToSlug} from "../../helpers";
 import MenuLeftSidebar from "../../components/menus/MenuLeftSidebar";
 
 const Product = () => {
     let {menu, product} = useParams()
     let menuSelected = menuMasterData.find(mn => convertStringToSlug(mn.title) === menu)
     let productSelected = menuSelected.product.find(mn => convertStringToSlug(mn.title) === product)
-    console.log("isisan: ", menuSelected, productSelected)
     return (
         <div className="container section">
             <div className="row my-4">
@@ -33,10 +32,10 @@ const Product = () => {
                                         <div className="py-3">
                                             <div className="price mb-2">Rp. 25,000</div>
                                             <div className="add-on mb-2">ADD ON -</div>
-                                            <div className="quantity">
-                                                <div>-</div>
-                                                <div>0</div>
-                                                <div>+</div>
+                                            <div className="quantity mb-3">
+                                                <div className="control">-</div>
+                                                <div className="qty">0</div>
+                                                <div className="control">+</div>
                                             </div>
                                             <button className="btn btn-warning btn-order">Add To Cart</button>
                                         </div>

@@ -8,9 +8,9 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import TheHeader from "./components/TheHeader";
 import Home from "./pages/Home";
 import TheFooter from "./components/TheFooter";
-import Detail from "./pages/Detail";
 import Menu from "./pages/menus";
 import Product from "./pages/products";
+import CartPreview from "./pages/cart/preview";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +26,8 @@ const router = createBrowserRouter([
     element: <Product />,
   },
   {
-    path: "/detail",
-    element: <Detail />,
+    path: "/cart/preview",
+    element: <CartPreview />,
   },
 ]);
 const App = () => {
