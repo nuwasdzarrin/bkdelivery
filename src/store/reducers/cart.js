@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {createSlice, current} from '@reduxjs/toolkit'
 
 export const cartSlice = createSlice({
     name: 'cart',
@@ -8,13 +8,45 @@ export const cartSlice = createSlice({
     },
     reducers: {
         addProduct: (state, action) => {
-            state.cartList.push(action.payload)
+            let payload = action.payload
+            let carts = [...current(state.cartList)]
+            if (carts.length) {
+                let index = carts.map(cas => cas.title).indexOf(payload.title)
+                if (index !== -1) {
+                    let cart = carts[index]
+                    carts[index] = {
+                        ...cart,
+                        quantity: cart.quantity + payload.quantity
+                    }
+                    state.cartList = carts
+                }
+                else state.cartList.push(action.payload)
+            }
+            else state.cartList.push(action.payload)
         },
         removeProduct: (state, action) => {
-            // state.value += action.payload
+            let payload = action.payload
+            let carts = [...current(state.cartList)]
+            if (carts.length) {
+                let index = carts.map(cas => cas.title).indexOf(payload.title)
+                if (index !== -1) {
+                    carts.splice(index,1)
+                    state.cartList = carts
+                }
+            }
         },
         updateQuantity: (state, action) => {
-            // state.value += action.payload
+            let payload = action.payload
+            let carts = [...current(state.cartList)]
+            if (carts.length) {
+                let index = carts.map(cas => cas.title).indexOf(payload.title)
+                if (index !== -1) {
+                    let cart = carts[index]
+                    if (payload.quantity < cart.quantity && cart.quantity === 1) carts.splice(index,1)
+                    else carts[index] = payload
+                    state.cartList = carts
+                }
+            }
         },
     },
 })

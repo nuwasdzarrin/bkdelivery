@@ -1,16 +1,26 @@
 import "./PreviewPage.scss";
 import Step from "../../components/cart/step/Step";
 import icTrash from "../../assets/icons/ic_trash.png";
-import menu1 from "../../assets/images/menus/menu-1.jpg";
 import FormQuantity from "../../components/cart/form_quantity/FormQuantity";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {cartList, removeProduct, updateQuantity} from "../../store/reducers/cart";
+import {formatPrice} from "../../helpers";
 const CartPreview = () => {
+    const dispatch = useDispatch();
+    const cart_list = useSelector(cartList)
+
+    const subTotal = () => {
+        return cart_list.reduce((n, {price, quantity}) => n + (price * quantity), 0) || 0
+    }
+
     const maxNote = 15
     let [note, setNote] = useState('')
     const onNoteTyping = (value) => {
         if (value.length <= maxNote) setNote(value)
     }
+
     return (
         <div className="container section">
             <div className="row my-4">
@@ -30,43 +40,38 @@ const CartPreview = () => {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>
-                                                <img src={menu1} className="image" />
-                                            </td>
-                                            <td>
-                                                <div className="title-product">Paket 1 Pcs Ayam Madura Medium</div>
-                                                <div className="subtitle">Drink: Coke</div>
-                                            </td>
-                                            <td>
-                                                <FormQuantity />
-                                            </td>
-                                            <td className="text-right">
-                                                <div className="price">Rp. 50,000</div>
-                                            </td>
-                                            <td>
-                                                <img src={icTrash} alt="trash" className="icon-trash" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src={menu1} className="image" />
-                                            </td>
-                                            <td>
-                                                <div className="title-product">Paket 1 Pcs Ayam Madura Medium</div>
-                                                <div className="subtitle">Drink: Coke</div>
-                                            </td>
-                                            <td>
-                                                <FormQuantity />
-                                            </td>
-                                            <td className="text-right">
-                                                <div className="price">Rp. 50,000</div>
-                                            </td>
-                                            <td>
-                                                <img src={icTrash} alt="trash" className="icon-trash" />
-                                            </td>
-                                        </tr>
-
+                                        {
+                                            cart_list.map((cl, index) => {
+                                                return (
+                                                    <tr key={index}>
+                                                        <td>
+                                                            <img src={cl.image} className="image" alt="product-pic" />
+                                                        </td>
+                                                        <td>
+                                                            <div className="title-product">{cl.title}</div>
+                                                            {/*<div className="subtitle">Drink: Coke</div>*/}
+                                                        </td>
+                                                        <td>
+                                                            <FormQuantity
+                                                                originQuantity={cl.quantity}
+                                                                onQuantityChange={(val) => {
+                                                                    dispatch(updateQuantity({
+                                                                        ...cl,
+                                                                        quantity: val
+                                                                    }))
+                                                                }} />
+                                                        </td>
+                                                        <td className="text-right">
+                                                            <div className="price">Rp. {formatPrice(cl.price)}</div>
+                                                        </td>
+                                                        <td>
+                                                            <img src={icTrash} alt="trash" className="icon-trash"
+                                                                 onClick={() => dispatch(removeProduct(cl))} />
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
                                         </tbody>
                                     </table>
                                     <div className="my-4">
@@ -84,7 +89,7 @@ const CartPreview = () => {
                                 <div className="col-lg-3 d-none d-lg-block right-product">
                                     <div className="py-3">
                                         <div className="title-subtotal mb-1">Order Subtotal*</div>
-                                        <div className="cart-price mb-2">Rp. 25,000</div>
+                                        <div className="cart-price mb-2">Rp. {formatPrice(subTotal())}</div>
                                         <div className="note-cart mb-4">*Price might change due to your delivery location.</div>
                                         <button className="btn btn-link btn-order-outline">Continue as Guest</button>
                                     </div>

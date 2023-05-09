@@ -8,7 +8,7 @@ const CarouselSection = (props) => {
                 props.data.map((dt, index) => {
                     return (
                         <div key={index}>
-                            <img src={dt.image} />
+                            <img src={dt.image} alt={`carousel-${index}`} />
                         </div>
                     )
                 })

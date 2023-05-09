@@ -1,18 +1,27 @@
 import './ProductPage.scss'
 import {useParams} from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { addProduct, removeProduct, updateQuantity } from "../../store/reducers/cart";
+import {useDispatch} from 'react-redux';
+import {addProduct} from "../../store/reducers/cart";
 import {menuMasterData} from "../../data";
-import {convertStringToSlug} from "../../helpers";
+import {convertStringToSlug, formatPrice} from "../../helpers";
 import MenuLeftSidebar from "../../components/menus/MenuLeftSidebar";
 import FormQuantity from "../../components/cart/form_quantity/FormQuantity";
-import {incrementByAmount} from "../../store/reducers/counter";
+import {useState} from "react";
 
 const Product = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
+    let [quantity, setQuantity] = useState(0)
     let {menu, product} = useParams()
     let menuSelected = menuMasterData.find(mn => convertStringToSlug(mn.title) === menu)
     let productSelected = menuSelected.product.find(mn => convertStringToSlug(mn.title) === product)
+
+    const onAddToCart = () => {
+        if (quantity < 1) return
+        dispatch(addProduct({
+            ...productSelected,
+            quantity: quantity
+        }))
+    }
     return (
         <div className="container section">
             <div className="row my-4">
@@ -35,14 +44,16 @@ const Product = () => {
                                     </div>
                                     <div className="col-lg-4 d-none d-lg-block right-product">
                                         <div className="py-3">
-                                            <div className="price mb-2">Rp. 25,000</div>
+                                            <div className="price mb-2">Rp. {formatPrice(productSelected.price)}</div>
                                             <div className="add-on mb-2">ADD ON -</div>
                                             <div className="mb-3">
-                                                <FormQuantity onQuantityChange={(e) => console.log("e: ", e)} />
+                                                <FormQuantity
+                                                    onQuantityChange={(val) => setQuantity(val)}
+                                                />
                                             </div>
                                             <button
                                                 className="btn btn-warning btn-order"
-                                                onClick={() => dispatch(addProduct())}
+                                                onClick={onAddToCart}
                                             >Add To Cart</button>
                                         </div>
                                     </div>

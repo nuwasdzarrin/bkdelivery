@@ -2,15 +2,16 @@ import logoBK from '../assets/images/logo_bk.png'
 import iconCart from '../assets/icons/ic_cart.png'
 import {useSelector} from "react-redux";
 import {cartList} from "../store/reducers/cart";
+import {Link} from "react-router-dom";
 
 const TheHeader = () => {
     const cart_list = useSelector(cartList)
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <a className="navbar-brand d-none d-lg-block" href="/">
+                <Link className="navbar-brand d-none d-lg-block" to={`/`}>
                     <img src={logoBK} className="navbar-logo" alt="logo"/>
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -38,15 +39,17 @@ const TheHeader = () => {
                         </li>
                     </ul>
                 </div>
-                <a className="d-lg-none" href="/">
+                <Link className="d-lg-none" to={`/`}>
                     <img src={logoBK} className="navbar-logo" alt="logo" />
-                </a>
+                </Link>
                 <div className="d-flex nav-link">
                     <div className="title mr-15">LOGIN</div>
-                    <div className="wrapper-ic-cart">
+                    <Link className="wrapper-ic-cart" to={`/cart/preview`}>
                         <img src={iconCart} alt="logo-cart" />
-                        <div className="total-cart">{cart_list.length}</div>
-                    </div>
+                        <div className="total-cart">
+                            {cart_list.reduce((n, {quantity}) => n + quantity, 0)}
+                        </div>
+                    </Link>
                 </div>
             </div>
         </nav>

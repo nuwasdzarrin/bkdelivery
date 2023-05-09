@@ -18,7 +18,7 @@ const HomePage = () => {
                                 <div className="col-6 col-lg-4 my-3" key={index}>
                                     <Link to={`/menus/${convertStringToSlug(mn.title)}`} className="text-decoration-none">
                                         <div className="wrapper-menu">
-                                            <img src={mn.image} className="image-menu" />
+                                            <img src={mn.image} className="image-menu" alt="product-pic" />
                                             <div className="row mt-3">
                                                 <div className="col-lg-6">
                                                     <div className="menu-title">{mn.title}</div>

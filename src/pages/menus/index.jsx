@@ -28,11 +28,14 @@ const Menu = () => {
                                                     <div className="wrapper-menu">
                                                         <div className="row">
                                                             <div className="col-4 col-lg-12">
-                                                                <img src={pr.image} className="image-menu" />
+                                                                <img src={pr.image} className="image-menu"
+                                                                     alt="product-pic" />
                                                             </div>
                                                             <div className="col-8 col-lg-12 product-caption">
                                                                 <div className="product-title mb-1">{pr.title}</div>
-                                                                <div className="product-price">Rp. {formatPrice(pr.price)}</div>
+                                                                <div className="product-price">
+                                                                    Rp. {formatPrice(pr.price)}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

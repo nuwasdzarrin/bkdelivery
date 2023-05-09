@@ -1,8 +1,11 @@
 import "./FromQuantity.scss"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const FormQuantity = (props) => {
     let [quantity, setQuantity] = useState(0)
+    useEffect(() => {
+        if (props.originQuantity) setQuantity(props.originQuantity)
+    }, [props.originQuantity])
     const increment = () => {
         let res = quantity+1
         setQuantity(res)
@@ -10,7 +13,7 @@ const FormQuantity = (props) => {
     }
     const decrement = () => {
         if (quantity > 0) {
-            let res = quantity+1
+            let res = quantity-1
             setQuantity(res)
             props.onQuantityChange(res)
         }
