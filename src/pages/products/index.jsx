@@ -52,7 +52,7 @@ const Product = () => {
                                                 />
                                             </div>
                                             <button
-                                                className="btn btn-warning btn-order"
+                                                className="btn btn-order"
                                                 onClick={onAddToCart}
                                             >Add To Cart</button>
                                         </div>
