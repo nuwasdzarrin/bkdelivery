@@ -27,6 +27,10 @@ const DeliveryPage = () => {
                                     <div className="my-3">
                                         <h6 className="mb-1">1. Set Lokasi Pengantaran di Peta</h6>
                                         <p className="note">Pastikan pin lokasi sudah sesuai dengan lokasi pengantaran</p>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.57988111059!2d106.82964875!3d-6.144807299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f59269e62e3d%3A0xb3da35d58f3f6382!2sJakarta%20International%20Expo%2C%20RW.10%2C%20East%20Pademangan%2C%20Pademangan%2C%20Central%20Jakarta%20City%2C%20Jakarta%2014410!5e0!3m2!1sen!2sid!4v1683650863691!5m2!1sen!2sid"
+                                            width="100%" loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                     <div className="my-3">
                                         <h6 className="mb-1">2. Berikan Alamat Lengkap</h6>
