@@ -2,21 +2,18 @@ import {Link} from "react-router-dom";
 import CarouselSection from "../components/home/CarouselSection";
 import {carouselMasterData, menuMasterData} from "../data";
 import {convertStringToSlug} from "../helpers";
-import {compareArraysAsSet} from "@testing-library/jest-dom/dist/utils";
 
-const Home = () => {
-    let carouselData = carouselMasterData
-    let menus = menuMasterData
+const HomePage = () => {
     return (
         <>
             <div className="mb-4">
-                <CarouselSection data={carouselData} />
+                <CarouselSection data={carouselMasterData} />
             </div>
             <div className="container section">
                 <div className="title my-2">Our Menus</div>
                 <div className="row">
                     {
-                        menus.map((mn, index) => {
+                        menuMasterData.map((mn, index) => {
                             return (
                                 <div className="col-6 col-lg-4 my-3" key={index}>
                                     <Link to={`/menus/${convertStringToSlug(mn.title)}`} className="text-decoration-none">
@@ -42,4 +39,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default HomePage;

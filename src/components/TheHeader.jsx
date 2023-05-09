@@ -1,12 +1,15 @@
 import logoBK from '../assets/images/logo_bk.png'
 import iconCart from '../assets/icons/ic_cart.png'
+import {useSelector} from "react-redux";
+import {cartList} from "../store/reducers/cart";
 
 const TheHeader = () => {
+    const cart_list = useSelector(cartList)
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
                 <a className="navbar-brand d-none d-lg-block" href="/">
-                    <img src={logoBK} className="navbar-logo" />
+                    <img src={logoBK} className="navbar-logo" alt="logo"/>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -36,13 +39,13 @@ const TheHeader = () => {
                     </ul>
                 </div>
                 <a className="d-lg-none" href="/">
-                    <img src={logoBK} className="navbar-logo" />
+                    <img src={logoBK} className="navbar-logo" alt="logo" />
                 </a>
                 <div className="d-flex nav-link">
                     <div className="title mr-15">LOGIN</div>
                     <div className="wrapper-ic-cart">
-                        <img src={iconCart} />
-                        <div className="total-cart">0</div>
+                        <img src={iconCart} alt="logo-cart" />
+                        <div className="total-cart">{cart_list.length}</div>
                     </div>
                 </div>
             </div>

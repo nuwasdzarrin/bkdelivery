@@ -1,4 +1,4 @@
-import "./menu.scss"
+import "./MenuPage.scss"
 import {useParams, Link} from "react-router-dom";
 import {convertStringToSlug, formatPrice} from "../../helpers";
 import {menuMasterData} from "../../data";

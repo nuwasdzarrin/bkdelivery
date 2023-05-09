@@ -24,12 +24,51 @@ $background-gold: #ed7801;
 .text-right {
   text-align: right;
 }
+.text-gold {
+  color: $background-gold;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.decoration-none {
+  text-decoration: none;
+}
 .border-left {
   border-left: 1px solid #e0e0e0;
 }
 .navbar-brand {
   position: relative;
   width: 90px;
+}
+.form-group {
+  position: relative;
+  margin: 25px 0;
+  .form-label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .max-content {
+    font-size: 14px;
+    position: absolute;
+    bottom: -23px;
+    right: 5px;
+    color: #b7b7b7;
+  }
+}
+.btn-order {
+  color: white;
+  background-color: $background-gold;
+  font-weight: bold;
+  width: 100%;
+}
+.btn-order-outline {
+  color: $background-gold;
+  font-weight: bold;
+  width: 100%;
+  text-decoration: none;
+  &:hover {
+    color: $title-color;
+  }
 }
 .navbar {
   &-logo {
@@ -129,6 +168,7 @@ $background-gold: #ed7801;
 .section {
   margin-top: 20px;
   margin-bottom: 20px;
+  min-height: 80vh;
   .title {
     font-family: FlameBold;
     font-size: 30px;
@@ -174,12 +214,6 @@ $background-gold: #ed7801;
       color: $title-color;
       line-height: 1.2;
     }
-    .btn-order {
-      color: white;
-      background-color: $background-gold;
-      font-weight: bold;
-      width: 100%;
-    }
   }
 }
 .right-product {
@@ -188,29 +222,26 @@ $background-gold: #ed7801;
   margin-bottom: -20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  .title-subtotal {
+    font-family: FlameSans;
+    font-weight: bold;
+    font-size: 14px;
+  }
   .price {
     font-size: 24px;
+    font-weight: bold;
+  }
+  .cart-price {
+    font-size: 28px;
     font-weight: bold;
   }
   .add-on {
     font-size: 13px;
     color: $title-color;
   }
-}
-.form-input-qty {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2px 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  font-weight: bold;
-  .control {
-    font-size: 22px;
-    color: #faaf18;
-    cursor: pointer;
-  }
-  .qty {
-    font-size: 20px;
+  .note-cart {
+    font-size: 13px;
+    color: #919191;
+    line-height: 1;
   }
 }
