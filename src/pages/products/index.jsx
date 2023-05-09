@@ -38,7 +38,7 @@ const Product = () => {
                                             <div className="price mb-2">Rp. 25,000</div>
                                             <div className="add-on mb-2">ADD ON -</div>
                                             <div className="mb-3">
-                                                <FormQuantity />
+                                                <FormQuantity onQuantityChange={(e) => console.log("e: ", e)} />
                                             </div>
                                             <button
                                                 className="btn btn-warning btn-order"
