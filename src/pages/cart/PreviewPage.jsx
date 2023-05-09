@@ -91,7 +91,9 @@ const CartPreview = () => {
                                         <div className="title-subtotal mb-1">Order Subtotal*</div>
                                         <div className="cart-price mb-2">Rp. {formatPrice(subTotal())}</div>
                                         <div className="note-cart mb-4">*Price might change due to your delivery location.</div>
-                                        <button className="btn btn-link btn-order-outline">Continue as Guest</button>
+                                        <Link className="btn btn-link btn-order-outline" to={`/cart/delivery`}>
+                                            Continue as Guest
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

@@ -38,6 +38,19 @@ $menu-yellow: #faaf18;
         z-index: 2;
       }
     }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+      &.active {
+        background-color: $menu-yellow;
+        color: $menu-gold;
+        & span {
+          background-color: $menu-gold;
+        }
+        &:before {
+          display: none;
+        }
+      }
+    }
     & span {
       font-size: 13px;
       border-radius: 50%;

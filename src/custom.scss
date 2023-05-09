@@ -1,4 +1,4 @@
-$font-family-base: "FlameReguler";
+$font-family-base: "FlameSans";
 $title-color: #8b542f;
 $background-gold: #ed7801;
 
@@ -24,6 +24,9 @@ $background-gold: #ed7801;
 .text-right {
   text-align: right;
 }
+.text-old-gold {
+  color: $title-color;
+}
 .text-gold {
   color: $background-gold;
 }
@@ -42,7 +45,7 @@ $background-gold: #ed7801;
 }
 .form-group {
   position: relative;
-  margin: 25px 0;
+  margin: 20px 0;
   .form-label {
     font-weight: bold;
     font-size: 14px;
@@ -60,6 +63,10 @@ $background-gold: #ed7801;
   background-color: $background-gold;
   font-weight: bold;
   width: 100%;
+  &:hover {
+    color: white;
+    background-color: #df7305;
+  }
 }
 .btn-order-outline {
   color: $background-gold;
@@ -206,7 +213,6 @@ $background-gold: #ed7801;
       line-height: 1.2;
     }
     .product-note {
-      font-family: FlameSans;
       line-height: 1.2;
     }
     .product-price {

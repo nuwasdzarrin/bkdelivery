@@ -11,7 +11,8 @@ import TheFooter from "./components/TheFooter";
 import Menu from "./pages/menus";
 import Product from "./pages/products";
 import CartPreview from "./pages/cart/PreviewPage";
-import Counter from "./pages/counter";
+import DeliveryPage from "./pages/cart/DeliveryPage";
+import PaymentPage from "./pages/cart/PaymentPage";
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
         <Route path="/menus/:menu" element={ <Menu /> } />
         <Route path="/products/:menu/:product" element={ <Product /> } />
         <Route path="/cart/preview" element={ <CartPreview /> } />
-        <Route path="/counter" element={ <Counter /> } />
+        <Route path="/cart/delivery" element={ <DeliveryPage /> } />
+        <Route path="/cart/payment" element={ <PaymentPage /> } />
       </Routes>
       <TheFooter />
     </>
