@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const MenuLeftSidebar = (props) => {
     return (
-        <>
+        <div className="wrapper-sidebar">
             {
                 props.menus.map((mn, index) => {
                     return (
@@ -20,7 +20,7 @@ const MenuLeftSidebar = (props) => {
                     )
                 })
             }
-        </>
+        </div>
     )
 }
 

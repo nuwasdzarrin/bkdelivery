@@ -13,10 +13,10 @@ const Menu = () => {
             <div className="row my-4">
                 <div className="col-lg-9 mx-auto">
                     <div className="row">
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 mb-3">
                             <MenuLeftSidebar menus={menus} menuSlug={menu} />
                         </div>
-                        <div className="col-lg-9">
+                        <div className="col-lg-9 mb-3">
                             <div className="row">
                                 {
                                     menuSelected.product.map((pr, index) => {

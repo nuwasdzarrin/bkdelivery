@@ -27,10 +27,10 @@ const Product = () => {
             <div className="row my-4">
                 <div className="col-lg-9 mx-auto">
                     <div className="row">
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 mb-3">
                             <MenuLeftSidebar menus={menuMasterData} menuSlug={menu} />
                         </div>
-                        <div className="col-lg-9">
+                        <div className="col-lg-9 mb-3">
                             <div className="wrapper-menu">
                                 <div className="row h-100">
                                     <div className="col-lg-8">
@@ -39,10 +39,13 @@ const Product = () => {
                                                 <div className="product-title mb-3">{productSelected.title}</div>
                                                 <p className="product-note mb-4">{productSelected.note}</p>
                                             </div>
-                                            <img src={productSelected.image} style={{maxWidth: '290px'}} alt="product-img" />
+                                            <div className="image-product">
+                                                <img src={productSelected.image} className="image-product-detail"
+                                                     alt="product-img" />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 d-none d-lg-block right-product">
+                                    <div className="col-lg-4 right-product">
                                         <div className="py-3">
                                             <div className="price mb-2">Rp. {formatPrice(productSelected.price)}</div>
                                             <div className="add-on mb-2">ADD ON -</div>

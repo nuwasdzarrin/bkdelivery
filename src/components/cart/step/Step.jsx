@@ -17,7 +17,7 @@ const Step = () => {
             </Link>
             <Link to={active > 0 ? `/cart/delivery` : '#'} className={`item ${active >= 1 ? 'active' : ''}`}>
                 <span>2</span>
-                <strong className="text">Delivery Info</strong>
+                <strong className="text">Delivery</strong>
             </Link>
             <Link to={active > 0 ? `/cart/payment` : '#'} className={`item ${active >= 2 ? 'active' : ''}`}>
                 <span>3</span>

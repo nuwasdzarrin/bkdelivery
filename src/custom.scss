@@ -88,6 +88,87 @@ $background-gold: #ed7801;
   }
 }
 .navbar {
+  .website {
+    &-right {
+      display: flex;
+    }
+    .wrapper-ic-cart {
+      position: relative;
+      background-color: $background-gold;
+      font-weight: bold;
+      width: 100%;
+      margin-top: -26px;
+      margin-bottom: -26px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 770px) {
+        margin-top: -18px;
+        margin-bottom: -18px;
+        padding: 0 10px;
+      }
+      .total-cart {
+        background-color: red;
+        color: white;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        right: 5px;
+      }
+    }
+    @media screen and (max-width: 770px) {
+      display: none;
+    }
+  }
+  .mobile {
+    position: relative;
+    width: 100%;
+    &-toggler {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &-logo {
+      margin: auto;
+      display: table;
+    }
+    &-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      .wrapper-ic-cart {
+        position: relative;
+        background-color: $background-gold;
+        font-weight: bold;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        .total-cart {
+          background-color: red;
+          color: white;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          position: absolute;
+          top: 2px;
+          right: 2px;
+        }
+      }
+    }
+    @media screen and (min-width: 770px) {
+      display: none;
+    }
+  }
   &-logo {
     position: absolute;
     top: -20px;
@@ -110,33 +191,8 @@ $background-gold: #ed7801;
   .title {
     font-family: FlameBold;
     font-size: 25px;
-  }
-  .wrapper-ic-cart {
-    position: relative;
-    background-color: $background-gold;
-    font-weight: bold;
-    width: 100%;
-    margin-top: -26px;
-    margin-bottom: -26px;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
     @media screen and (max-width: 770px) {
-      margin-top: -18px;
-      margin-bottom: -18px;
-    }
-    .total-cart {
-      background-color: red;
-      color: white;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      position: absolute;
-      top: 15px;
-      right: 5px;
+      font-size: 16px;
     }
   }
 }
@@ -239,6 +295,13 @@ $background-gold: #ed7801;
   margin-bottom: -20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  @media screen and (max-width: 770px) {
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   .title-subtotal {
     font-family: FlameSans;
     font-weight: bold;

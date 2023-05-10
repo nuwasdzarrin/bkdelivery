@@ -86,12 +86,12 @@ const CartPreview = () => {
                                         <div className="max-content">{note.length}/{maxNote}</div>
                                     </div>
                                 </div>
-                                <div className="col-lg-3 d-none d-lg-block right-product">
+                                <div className="col-lg-3 right-product">
                                     <div className="py-3">
                                         <div className="title-subtotal mb-1">Order Subtotal*</div>
                                         <div className="cart-price mb-2">Rp. {formatPrice(subTotal())}</div>
                                         <div className="note-cart mb-4">*Price might change due to your delivery location.</div>
-                                        <button className="btn btn-order mb-2">Login To Order</button>
+                                        {/*<button className="btn btn-order mb-2">Login To Order</button>*/}
                                         <Link className="btn btn-link btn-link-outline" to={`/cart/delivery`}>
                                             Continue as Guest
                                         </Link>

@@ -10,27 +10,27 @@ const TheFooter = () => {
             <div className="title">BURGER KING® DELIVERY</div>
             <div className="second">
                 <div className="my-2">
-                    <a className="phone mr-20">
-                        <img src={icPhone} className="icon mr-5" />
+                    <a href="/" className="phone mr-20">
+                        <img src={icPhone} className="icon mr-5" alt="phone-icon" />
                         15000 25
                     </a>
                 </div>
                 <div className="my-2">
-                    <a className="mr-20">
-                        <img src={icEmail} className="icon mr-5" />
+                    <a href="/" className="mr-20">
+                        <img src={icEmail} className="icon mr-5" alt="phone-icon" />
                         guestservice@burgerking.co.id
                     </a>
                 </div>
                 <div className="d-flex my-2">
-                    <a className="mr-5"><img src={icFb} className="icon mr-5" /></a>
-                    <a className="mr-5"><img src={icTwitter} className="icon mr-5" /></a>
-                    <a className="mr-5"><img src={icYoutube} className="icon mr-5" /></a>
+                    <a href="/" className="mr-5"><img src={icFb} className="icon mr-5" alt="social" /></a>
+                    <a href="/" className="mr-5"><img src={icTwitter} className="icon mr-5" alt="social" /></a>
+                    <a href="/" className="mr-5"><img src={icYoutube} className="icon mr-5" alt="social" /></a>
                 </div>
             </div>
             <div className="third">
-                <div className="my-2 mr-12 right-line"><a>About Us</a></div>
-                <div className="my-2 mr-12 right-line"><a>Kebijakan Privasi</a></div>
-                <div className="my-2 mr-12 right-line"><a>Syarat dan Ketentuan</a></div>
+                <div className="my-2 mr-12 right-line"><a href="/">About Us</a></div>
+                <div className="my-2 mr-12 right-line"><a href="/">Kebijakan Privasi</a></div>
+                <div className="my-2 mr-12 right-line"><a href="/">Syarat dan Ketentuan</a></div>
                 <div className="my-2 mr-12">TM & © 2023 Burger King Corporation. Used Under License. All rights reserved.</div>
             </div>
         </div>
